@@ -7,7 +7,6 @@ public interface Storage {
 
     Object getObject(Context context, String key, Class klass);
 
-    String getStringValue(Context context, String key);
+   // String getStringValue(Context context, String key);
 
-//    void deleteSms(Context context, String keyOfSms);
 }
