@@ -31,7 +31,7 @@ public class FragmentMzia extends Fragment {
 
    // private static String saveData;
     private ListView mSmsrecived;
-    private MessageArrayAdapter messageArrayAdapter;
+    public static MessageArrayAdapter messageArrayAdapter;
     private static ArrayList<SmsItem> eachMessage;
     private EditText messageForSend;
 
@@ -94,6 +94,7 @@ public class FragmentMzia extends Fragment {
             }
             messages.getMessagesinMziachat().add(smsItem);
             storage.add(getContext(),Messages.SMS_STORAGE_KEY,messages);
+           messageArrayAdapter.add(smsItem);
         }
     }
     void addSmsFromZezvaToStorage(){
@@ -114,7 +115,7 @@ public class FragmentMzia extends Fragment {
             }
             messages.getMessageinZezvachat().add(smsItem);
             storage.add(getContext(),Messages.SMS_STORAGE_KEY,messages);
-
+            FragmentZezva.messageArrayAdapter.add(smsItem);
         }
 
     }
