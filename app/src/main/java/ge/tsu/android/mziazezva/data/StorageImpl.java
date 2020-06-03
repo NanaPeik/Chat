@@ -32,27 +32,11 @@ public class StorageImpl implements Storage{
         return data == null ? null : new Gson().fromJson(data, klass);
     }
 
-    @Override
-    public String getStringValue(Context context, String key) {
-        SharedPreferences sharedPreferences=getInstance(context);
-        return sharedPreferences.getString(key,null);
-    }
+//     @Override
+//     public String getStringValue(Context context, String key) {
+//         SharedPreferences sharedPreferences=getInstance(context);
+//         return sharedPreferences.getString(key,null);
+//     }
 
 
-//    @Override
-//    public void deleteSms(Context context, String keyOfSms) {
-//        Object object=getObject(context,"sms_storage", Messages.class);
-//        Messages messages= (Messages) object;
-//        ArrayList<SmsItem> smsItemArrayList=messages.getMessagesinMziachat();
-//        Iterator<SmsItem> smsItemIterator=smsItemArrayList.iterator();
-//        while (smsItemIterator.hasNext()){
-//            SmsItem smsItem=smsItemIterator.next();
-//            if(messages.getMessagesinMziachat()!=null&& messages.getMessagesinMziachat().equals((keyOfSms))){
-//                smsItemIterator.remove();
-//                break;
-//            }
-//        }
-//        messages.setMessagesinMziachat(smsItemArrayList);
-//        add(context,"sms_storage",messages);
-//    }
 }
