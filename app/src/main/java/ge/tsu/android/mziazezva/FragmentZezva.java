@@ -31,7 +31,7 @@ public class FragmentZezva extends Fragment {
 
    // private static String saveData;
     private ListView mSms;
-    private MessageArrayAdapter messageArrayAdapter;
+    public static MessageArrayAdapter messageArrayAdapter;
     private static ArrayList<SmsItem> eachMessage;
 
     public static String NOTIFICATION = "ge.tsu.chat.NOTIFICATION-Zezva";
@@ -94,7 +94,7 @@ public class FragmentZezva extends Fragment {
             }
             messages.getMessageinZezvachat().add(smsItem);
             storage.add(getContext(),Messages.SMS_STORAGE_KEY,messages);
-
+            messageArrayAdapter.add(smsItem);
         }
     }
 
@@ -116,6 +116,7 @@ public class FragmentZezva extends Fragment {
             }
             messages.getMessagesinMziachat().add(smsItem);
             storage.add(getContext(),Messages.SMS_STORAGE_KEY,messages);
+           FragmentMzia.messageArrayAdapter.add(smsItem);
         }
 
     }
